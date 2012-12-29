@@ -18,7 +18,8 @@ module Refinery
 
         def configure!
           app_images = ::Dragonfly[:refinery_images]
-          app_images.configure_with(:rails) do |c|
+          app_images.configure_with(:rails)
+          app_images.configure do |c|
             c.datastore.root_path = Refinery::Images.datastore_root_path
             c.url_format = Refinery::Images.dragonfly_url_format
             c.secret = Refinery::Images.dragonfly_secret
