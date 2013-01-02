@@ -9,17 +9,17 @@ gem 'quiet_assets', :group => :development
 
 # Database Configuration
 unless ENV['TRAVIS']
-  gem 'activerecord-jdbcsqlite3-adapter', :platform => :jruby
+  gem 'activerecord-jdbcsqlite3-adapter', '>= 1.2.5', :platform => :jruby
   gem 'sqlite3', :platform => :ruby
 end
 
 if !ENV['TRAVIS'] || ENV['DB'] == 'mysql'
-  gem 'activerecord-jdbcmysql-adapter', :github => 'jruby/activerecord-jdbc-adapter', :branch => 'fix_loading_jdbc', :platform => :jruby
+  gem 'activerecord-jdbcmysql-adapter', '>= 1.2.5', :platform => :jruby
   gem 'mysql2', :platform => :ruby
 end
 
 if !ENV['TRAVIS'] || ENV['DB'] == 'postgresql'
-  gem 'activerecord-jdbcpostgresql-adapter', :platform => :jruby
+  gem 'activerecord-jdbcpostgresql-adapter', '>= 1.2.5', :platform => :jruby
   gem 'pg', :platform => :ruby
 end
 
